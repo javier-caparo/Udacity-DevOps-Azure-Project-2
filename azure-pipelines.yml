@@ -11,13 +11,13 @@ variables:
   azureServiceConnectionId: '8f7db0fe-d0af-4b7c-8a2b-a671a60acc60'
 
   # Web app name
-  webAppName: 'my-ml-app'
+  webAppName: 'jc-my-ml-app'
 
   # Agent VM image name
   vmImageName: 'Ubuntu-18.04'
 
   # Environment name
-  environmentName: 'my-ml-app'
+  environmentName: 'jc-my-ml-app'
 
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
@@ -88,7 +88,7 @@ stages:
             displayName: 'Use Python version'
 
           - task: AzureWebApp@1
-            displayName: 'Deploy Azure Web App : my-ml-app'
+            displayName: 'Deploy Azure Web App : jc-my-ml-app'
             inputs:
               azureSubscription: $(azureServiceConnectionId)
               appName: $(webAppName)
