@@ -29,7 +29,7 @@ In this project, you will build a Github repository from scratch and create a sc
 
 ## First: CI Pipeline with GitHub Actions
 
-### Architectural Diagram
+### Architectural Diagram - CI - GitHub Actions
 
 * Architectural Diagram - ![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/ci-diagram.png)
 
@@ -38,12 +38,12 @@ In this project, you will build a Github repository from scratch and create a sc
 
 * Enter to Azure Portal with your Accoutn and open a Azure Cloud shell ( use Bash)
  - If you are not created one , just follow the first creation and wait a seconds to get your Cloud Shell 
- 
-* First of all set up SSH Keys in your azure cloud shell, add the rsa.pub key to your GitHub repor ( ssh keys)  and then clone the project there.
+
+* First of all set up SSH Keys in your azure cloud shell, add the `id_rsa.pub` key to your GitHub repo ( ssh keys)  and then clone the project there.
 
 ```sh
 ssh-keygen -t rsa
- 
+ cat ~/.ssh/id_rsa.pub
 ```
 
 ![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%201%20-%20cloning%20repo.png)
@@ -84,7 +84,7 @@ ls -lasth .github/workflows/main.yml
 ```
 ![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%203%20-%20github%20actions%20workflow%20build%20-%20OK.png)
 
-Note: We’ve created a simple Gighub Action in the repo which automates the lint  and test of our app.
+Note: We’ve created a simple GitHUB Action in the repo which automates the lint  and test of our app.
 Note: You can add the GitHub Actions badge to you README.md ( it's a good practice to do that)
 
 * (OPTIONAL but HIGHLY Recommended) - Also you can add a CI pipeline with CircleCI.
@@ -96,7 +96,7 @@ ls -lasth .circleci/config.yml
 Note:  this article that Noah wrote on the topic ( https://circleci.com/blog/increase-reliability-in-data-science-and-machine-learning-projects-with-circleci/) 
 
 
-## Second : CI?CD Pipeline with AZURE DEVOPS
+## Second : CI/CD Pipeline with AZURE DEVOPS
 
 * Return to the `main` branch
 ```sh
@@ -104,9 +104,13 @@ git checkout main
 git branch
 ```
 
-* Go to Azure Deveops page  and sign in it, create a new Project inside your organization ( if you dont have an organization create one first).
+### Azure DevOps Pipelines Architectural Diagram
 
-* In your new Project in Azure DevOps, go to Project Settings and create a new `Pipeline --> Service Connection` as is explained on the Youtube video link  below ( Service Connection must be of Type Azure Resource Manager)
+* Architectural Diagram - ![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/cd-diagram.png)
+
+* Go to Azure Devops page  and sign in it, create a new Project inside your organization ( if you don't have an organization create one first).
+
+* In your new Project in Azure DevOps, go to Project Settings and create a new `Pipeline --> Service Connection` as is explained on the YouTube video link  below ( Service Connection must be of Type Azure Resource Manager)
 
 Note 1 : Name your Service Connection `AZServiceConnection`
 Note 2: Use a link of as this `https://dev.azure.com/<organization>/<project_name>/_apis/serviceendpoint/endpoints?api-version=5.0-preview.2`  to find your ServiceConnectionID ( take note of this number since you will needed in the yaml file to build the pipeline). Replace the values for the ones that you created for your organization and project name.
