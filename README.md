@@ -46,7 +46,7 @@ ssh-keygen -t rsa
  
 ```
 
-![alt text](<Link here>)
+![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%201%20-%20cloning%20repo.png)
 
 * Change to branch "hello-github-actions" 
 ```sh
@@ -74,7 +74,7 @@ source ~/.myrepo/bin/activate
 make all
 ```
 
-![alt text](<link here>)
+![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%202%20-%20test%20passed%20after%20make%20all.png)
 
 
 * Next set up Github Actions in your repo by adding the `main.yml file present in the .github/workflows folder.
@@ -82,7 +82,7 @@ make all
 ```sh
 ls -lasth .github/workflows/main.yml
 ```
-![alt text](<link here>)
+![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%203%20-%20github%20actions%20workflow%20build%20-%20OK.png)
 
 Note: We’ve created a simple Gighub Action in the repo which automates the lint  and test of our app.
 Note: You can add the GitHub Actions badge to you README.md ( it's a good practice to do that)
@@ -106,14 +106,14 @@ git branch
 
 * Go to Azure Deveops page  and sign in it, create a new Project inside your organization ( if you dont have an organization create one first).
 
-* In your new Project in Azure DevOps, go to Project Settings and create a new `Pipeline --> Service Connection` as is explained on the Youtube video below ( Service Connection must be of Type Azure Resource Manager)
+* In your new Project in Azure DevOps, go to Project Settings and create a new `Pipeline --> Service Connection` as is explained on the Youtube video link  below ( Service Connection must be of Type Azure Resource Manager)
 
 Note 1 : Name your Service Connection `AZServiceConnection`
-Note 2: Use a link of as this `https://dev.azure.com/<organization>/<project_name>/_apis/serviceendpoint/endpoints?api-version=5.0-preview.2`  to find your ServiceConnectionID ( take note of this number since you will needed in the yaml file to build the pipeline). Replace the alues for the ones that you created for your organziation and project name.
+Note 2: Use a link of as this `https://dev.azure.com/<organization>/<project_name>/_apis/serviceendpoint/endpoints?api-version=5.0-preview.2`  to find your ServiceConnectionID ( take note of this number since you will needed in the yaml file to build the pipeline). Replace the values for the ones that you created for your organization and project name.
 Note3: the ServiceConnection ID is the number before the name `AZServiceConnection` of the above link.
 
 * In  your new Project in Azure DevOps, go to Pipelines -->New Pipeline --> GitHub --> Select Your Repo --. select an Existing YAML file'
-- Choose the `main` branch and the file named `azure-pipelines.yml` as is showed on the fiure below
+- Choose the `main` branch and the file named `azure-pipelines.yml` as is showed on the figure below
 
 ![alt text](<link here>)
 
@@ -123,7 +123,7 @@ Note3: the ServiceConnection ID is the number before the name `AZServiceConnecti
 
 NOTE: As first attempt the Pipeline must fails !!!!
 
-NOTE: Why , cause 2 importnat things. You are not created your webapp yet in azure , and you must modify the ServiceConnection and the name of your webapp on the `azure-pipelines.yml` file for the ones that you got.
+NOTE: Why , cause 2 important things. You are not created your webapp yet in azure , and you must modify the ServiceConnection and the name of your webapp on the `azure-pipelines.yml` file for the ones that you got.
 
 
 * Deploy the flask-sklearn app to Azure app Service ( using Plan B1)  with this command ( Create a webapp and deploy code from a local workspace to the app):
@@ -148,7 +148,7 @@ Note: This operation can take a while to complete ...
 grep https make_predict_azure_app.sh
 ```
 
-* perform a cosmetic change to your app.py , so you can see your CI/CD piepline in action on Azure DevOps/
+* perform a cosmetic change to your app.py , so you can see your CI/CD pipeline in action on Azure DevOps/
 
 - On file `app.py` change this line
 ```sh
@@ -204,12 +204,12 @@ Port: 443
 ./loadtesting.sh
 ```
 
-- form there you can see how the load testing is performing and how you app established on a # of RPS 
-- This is good to know how good is your webapp and your plan to manage the requets. So you can decide to scale up the plan service of your webapp for example.
-- Locust coudl generate a stats report.
+- from there you can see how the load testing is performing and how you app established on a # of RPS 
+- This is good to know how good is your webapp and your plan to manage the requests. So you can decide to scale up the plan service of your webapp for example.
+- Locust could generate a stats report.
 
 
-![alt text](<link here>)
+![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/webapp-answering%20locust%20load%20testing.png)
 
 Remaining screenshots can be checked in the screenshot folder.
 
