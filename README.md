@@ -10,7 +10,7 @@ badges
 [![AzurePipelines](https://dev.azure.com/javiercaparo574/test-udacity/_apis/build/status/jfcb853.Udacity-DevOps-Azure-Project-2?branchName=main)]
 
 
-
+## Introduction
 In this project, you will build a Github repository from scratch and create a scaffolding that will assist you in performing both Continuous Integration and Continuous Delivery. You'll use Github Actions along with a Makefile, requirements.txt and application code to perform an initial lint, test, and install cycle. Next, you'll integrate this project with Azure Pipelines to enable Continuous Delivery to Azure App Service.
 
 ## Project Plan
@@ -31,7 +31,8 @@ In this project, you will build a Github repository from scratch and create a sc
 
 ### Architectural Diagram
 
-* Architectural Diagram - ![alt text](https://drive.google.com/file/d/1v6qrzDT5AtoRDnVFsEOhMhG19mfe7pZQ/view?usp=sharing)
+* Architectural Diagram - ![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/ci-diagram.png)
+
 
 ### Instructions
 
