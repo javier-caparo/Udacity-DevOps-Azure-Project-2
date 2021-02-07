@@ -1,15 +1,21 @@
 import time
 from locust import HttpUser, task, between
 
+class WebsiteTestUser(HttpUser):
+    wait_time = between(0.5, 3.0)
 
-class WebsiteUser(HttpUser):
-    wait_time = between(1, 5)
+    def on_start(self):
+        """ on_start is called when a Locust start before any task is scheduled """
+        pass
 
-    # @task
-    # def index_page(self):
-    #     self.client.get(url="/hello")
+    def on_stop(self):
+        """ on_stop is called when the TaskSet is stopping """
+        pass
 
-    @task
+    @task(1)
+    def index(self):
+        self.client.get("https://jc-my-ml-app.azurewebsites.net/")
+
     @task(2)
     def predict(self):
         self.client.post("/predict",{
