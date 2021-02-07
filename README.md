@@ -31,7 +31,7 @@ In this project, you will build a Github repository from scratch and create a sc
 
 ### Architectural Diagram
 
-* Architectural Diagram - ![alt text](<link here>)
+* Architectural Diagram - ![alt text](https://drive.google.com/file/d/1v6qrzDT5AtoRDnVFsEOhMhG19mfe7pZQ/view?usp=sharing)
 
 ### Instructions
 
