@@ -3,8 +3,8 @@
 badges
 ------
 
-![Python application test with Github Actions](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg?branch=main)
-
+<github actions link here>
+ 
 [![CircleCI](https://circleci.com/gh/jfcb853/Udacity-DevOps-Azure-Project-2.svg?style=svg)](https://app.circleci.com/pipelines/github/jfcb853/Udacity-DevOps-Azure-Project-2)
 
 [![AzurePipelines](https://dev.azure.com/javiercaparo574/test-udacity/_apis/build/status/jfcb853.Udacity-DevOps-Azure-Project-2?branchName=main)]
@@ -15,7 +15,7 @@ In this project, you will build a Github repository from scratch and create a sc
 
 ## Project Plan
 
-* Link to a Trello board for the project - <link here>
+* Link to a Trello board for the project - (https://trello.com/b/BBqfWn2b/dashboard-ml-product)
 * Link to a spreadsheet - <link here>
 
 
