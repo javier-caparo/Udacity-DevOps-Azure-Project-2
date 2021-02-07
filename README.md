@@ -16,7 +16,7 @@ In this project, you will build a Github repository from scratch and create a sc
 ## Project Plan
 
 * Link to a Trello board for the project - (https://trello.com/b/BBqfWn2b/dashboard-ml-product)
-* Link to a spreadsheet - <link here>
+* Link to a spreadsheet - (https://docs.google.com/spreadsheets/d/e/2PACX-1vQlBP_CzxOHPZOf_BYZ1rj1u6cuJKdOc_D0Sr_6S8p3LbHKIo8UlGiQzyleR67kNa_dsIuxgTIsUZex/pubhtml)
 
 
 ## Pre requisites
