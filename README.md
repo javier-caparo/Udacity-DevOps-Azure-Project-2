@@ -1,10 +1,10 @@
 # Udacity-DevOps-Azure-Project-2
 Udacity-DevOps-Azure-Project-1
 
-badges
-------
+badges for this branch
+----------------------
 
-![Python application test with Github Actions](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg?branch=main)
+![Python application test with Github Actions](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg?branch=hello-github-actions)
 
 ## CI with GitHub Actions
 
