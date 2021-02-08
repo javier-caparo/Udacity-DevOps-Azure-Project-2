@@ -3,7 +3,7 @@ name: Python application test with Github Actions
 on: 
   push:
     branches:
-      - hello-github-actions
+      - '*'
 
 jobs:
   build:
