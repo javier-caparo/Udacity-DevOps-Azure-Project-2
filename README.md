@@ -77,15 +77,20 @@ make all
 
 ![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%202%20-%20test%20passed%20after%20make%20all.png)
 
-* Next set up Github Actions in your repo by adding the `main.yml` file present in the .github/workflows folder.
+* Next set up Github Actions in your repo doign this :
+
+> just add an space on botton of file `.github/workflows/pythonapp.yml` and save it
 
 ```sh
-ls -lasth .github/workflows/main.yml
+ls -lasth .github/workflows/pythonapp.yml
+vim .github/workflows/pythonapp.yml
 ```
+
+> Go to GItHUb Actions and you will see the Workflow in action!!!
 
 ![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%203%20-%20github%20actions%20workflow%20build%20-%20OK.png)
 
-Note: We’ve created a simple GitHUB Action in the repo which automates the lint  and test of our app.
+Note: it was  created a simple GitHUB Action in the branch  which automates the lint  and test of our app.
 Note: You can add the GitHub Actions badge to you README.md ( it's a good practice to do that)
 
 * (OPTIONAL but HIGHLY Recommended) - Also you can add a CI pipeline with CircleCI.
@@ -96,7 +101,7 @@ Note: You can add the GitHub Actions badge to you README.md ( it's a good practi
 ls -lasth .circleci/config.yml
 ```
 
-Note:  this article that Noah wrote on the topic ( https://circleci.com/blog/increase-reliability-in-data-science-and-machine-learning-projects-with-circleci/) 
+> Note:  there is an article that Noah Gift wrote on the topic ( https://circleci.com/blog/increase-reliability-in-data-science-and-machine-learning-projects-with-circleci/) 
 
 ## Second : CI/CD Pipeline with AZURE DEVOPS
 
