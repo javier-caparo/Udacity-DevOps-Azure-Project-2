@@ -8,7 +8,7 @@ trigger:
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
-  azureServiceConnectionId: '8f7db0fe-d0af-4b7c-8a2b-a671a60acc60'
+  azureServiceConnectionId: '8c1484c7-5ea8-4cfa-a989-33094aee5327'
 
   # Web app name
   webAppName: 'jc-my-ml-app'
