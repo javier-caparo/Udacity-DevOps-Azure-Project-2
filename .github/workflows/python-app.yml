@@ -1,6 +1,9 @@
 name: Python application test with Github Actions
 
-on: [push]
+on: 
+  push:
+    branches:
+      - hello-github-actions
 
 jobs:
   build:
