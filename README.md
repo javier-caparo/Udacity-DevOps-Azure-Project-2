@@ -237,7 +237,7 @@ Port: 443
 
 Remaining screenshots can be checked in the screenshot folder.
 
-## CLEAN OUT
+## CLEANING OUT
 
 * delete the resource group of your webapp created.
 
@@ -255,7 +255,7 @@ Remaining screenshots can be checked in the screenshot folder.
 
 ## YouTube Demo
 
-Link for YouTube Demo Video -> (https://youtu.be/jysGOhOFHTs)
+Link to YouTube Demo Video -> (https://youtu.be/jysGOhOFHTs)
 
 ## License
 
