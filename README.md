@@ -8,7 +8,7 @@
 
 ![Python application test with Github Actions](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)
 
-[![Build Status](https://dev.azure.com/javiercaparo574/udacity-project-2/_apis/build/status/jfcb853.Udacity-DevOps-Azure-Project-2?branchName=main)](https://dev.azure.com/javiercaparo574/udacity-project-2/_build/latest?definitionId=6&branchName=main)
+![AzurePipelines](https://dev.azure.com/javiercaparo574/udacity-project-2/_apis/build/status/jfcb853.Udacity-DevOps-Azure-Project-2?branchName=main)
 
 ## Introduction
 
@@ -90,7 +90,7 @@ vim .github/workflows/pythonapp.yml
 
 ![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%203%20-%20github%20actions%20workflow%20build%20-%20OK.png)
 
-![alt text](< insert screen 3a here>)
+![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%203a%20-%20githubactions-workflow-created-summary.png)
 
 Note: it was  created a simple GitHUB Action in the branch  which automates the lint  and test of our app.
 Note: You can add the GitHub Actions badge to you README.md ( it's a good practice to do that)
@@ -133,8 +133,7 @@ Note3: the ServiceConnection ID is the number before the name `AZServiceConnecti
 az webapp up -n <name of webapp> --location southcentralus --sku B1
 ```
 
-![alt text](< insert screen 4a here>)
-
+![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%204a%20-%20webapp%20created%20.png)
 
 >Note 1: Your service URL  will be something like this : `https://<name of webapp>.azurewebsites.net/`
 >Note 2: If you don't choose the sku , the default will be `P1V2(Premium V2 Small)` ( brings more costs associated)
@@ -143,18 +142,17 @@ az webapp up -n <name of webapp> --location southcentralus --sku B1
 
 * In  your new Project in Azure DevOps, go to Pipelines -->New Pipeline --> GitHub --> Select Your Repo --> select `an Existing YAML file`
 
-![alt text](< insert screen 5 here>)
-
+![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%205%20-%20creating%20azure%20pipeline.png)
 
 > Choose the `main` branch and the file named `azure-pipelines.yml` as is showed on the figure below
 > Update the `azure-pipelines.yml` with the name of your webapp and your Service connection point ( Check YouTube video for a detailed explanation)
 > Modifications are at variables webAppName & environmentName too !!!
 
-![alt text](< insert screen 5a here>)
+![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%205a%20-%20existing%20yaml%20file.png)
 
 * Choose Run Pipeline and your Azure DevOps Pipeline is going to start to be deployed with all his stages ( in this case 2: Build & deploy)
 
-![alt text](< insert screen 6 here>)
+![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%206%20-%20azure%20devops%20pipeline%20executing.png)
 
 * Perform a cosmetic change to your app.py , so you can see your CI/CD pipelines in action on Azure DevOps ( CD) & GitHub Actions (CI)
 
@@ -179,9 +177,9 @@ git commit -m "app.py updated"
 git push origin main
 ```
 
-![alt text](< insert screen 7 here>)
+![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%207%20-%20azure%20devops%20pipeline%20integrated%20to%20repo.png)
 
-![alt text](< insert screen 7b here>)
+![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%207b%20-%20ci%20pipeline%20main.png)
 
 * Check that the webapp is running opening his URL, example:
 
@@ -189,7 +187,7 @@ git push origin main
 https://jc-my-ml-app.azurewebsites.net/
 ```
 
-![alt text](< insert screen 8 here>)
+![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%208%20-%20webapp%20running.png)
 
 * Update the file `make_predict_azure_app.sh` with the webapp service end point
 
@@ -210,11 +208,11 @@ Port: 443
 {"prediction":[20.35373177134412]}
 ```
 
-![alt text](< insert screen 9 here>)
+![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%209%20-%20make%20azure%20prediction.png)
 
 * Logging: Check on webapp log tail `az webapp log tail` , the answer like this:
 
-![alt text](< insert screen 10 here>)
+![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%2010%20-%20webapp%20log%20tail.png)
 
 * Execute a Load Testing , running Locust .
 
@@ -229,7 +227,13 @@ Port: 443
 > This is good to know how good is your webapp and your plan to manage the requests. So you can decide to scale up the plan service of your webapp for example.
 -> Locust could generate a stats report.
 
-![alt text](<link here>)
+![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%20locust%20-%20chart%201.png)
+
+![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%20locust%20-%20chart%202.png>)
+
+![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%20locust%20-%20chart%203.png)
+
+![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%20locust%20-%20report.png)
 
 Remaining screenshots can be checked in the screenshot folder.
 
