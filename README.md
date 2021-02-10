@@ -6,9 +6,9 @@
 
 [![CircleCI](https://circleci.com/gh/jfcb853/Udacity-DevOps-Azure-Project-2.svg?style=svg)](https://app.circleci.com/pipelines/github/jfcb853/Udacity-DevOps-Azure-Project-2)
 
-![Python application test with Github Actions](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg?branch=main)
+![Python application test with Github Actions](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)
 
-[![AzurePipelines](https://dev.azure.com/javiercaparo574/test-udacity/_apis/build/status/jfcb853.Udacity-DevOps-Azure-Project-2?branchName=main)]
+[![Build Status](https://dev.azure.com/javiercaparo574/udacity-project-2/_apis/build/status/jfcb853.Udacity-DevOps-Azure-Project-2?branchName=main)](https://dev.azure.com/javiercaparo574/udacity-project-2/_build/latest?definitionId=6&branchName=main)
 
 ## Introduction
 
@@ -16,7 +16,7 @@ In this project, you will build a Github repository from scratch and create a sc
 
 ## Project Plan
 
-* Link to a Trello board for the project - (https://trello.com/b/BBqfWn2b/dashboard-ml-product)
+* Link to Trello's board for the project - (https://trello.com/b/BBqfWn2b/dashboard-ml-product)
 * Link to a spreadsheet - (https://docs.google.com/spreadsheets/d/e/2PACX-1vQlBP_CzxOHPZOf_BYZ1rj1u6cuJKdOc_D0Sr_6S8p3LbHKIo8UlGiQzyleR67kNa_dsIuxgTIsUZex/pubhtml)
 
 ## Pre requisites
@@ -90,12 +90,14 @@ vim .github/workflows/pythonapp.yml
 
 ![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%203%20-%20github%20actions%20workflow%20build%20-%20OK.png)
 
+![alt text](< insert screen 3a here>)
+
 Note: it was  created a simple GitHUB Action in the branch  which automates the lint  and test of our app.
 Note: You can add the GitHub Actions badge to you README.md ( it's a good practice to do that)
 
 * (OPTIONAL but HIGHLY Recommended) - Also you can add a CI pipeline with CircleCI.
 
-- Open your account in CircleCI , add your repo and copy the `config.yml` of directory `.circleci`
+> Open your account in CircleCI , add your repo and copy the `config.yml` of directory `.circleci`
 
 ```sh
 ls -lasth .circleci/config.yml
@@ -125,44 +127,36 @@ git branch
 > Note 2: Use a link of as this `https://dev.azure.com/<organization>/<project_name>/_apis/serviceendpoint/endpoints?api-version=5.0-preview.2`  to find your ServiceConnectionID ( take note of this number since you will needed in the yaml file to build the pipeline). Replace the values for the ones that you created for your organization and project name.
 Note3: the ServiceConnection ID is the number before the name `AZServiceConnection` of the above link.
 
-* In  your new Project in Azure DevOps, go to Pipelines -->New Pipeline --> GitHub --> Select Your Repo --. select an Existing YAML file'
-
-> Choose the `main` branch and the file named `azure-pipelines.yml` as is showed on the figure below
-
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/screen%205%20-%20creating%20azure%20pipeline.png)
-
-* After successfully configuring Azure pipelines and github actions check that if you make any commit then the pipeline is triggered and it runs but with no success!!!
-
-![alt text](<link here>)
-
-> NOTE 1: As first attempt the Pipeline must fails !!!!
-> NOTE 2: Why? Due two important things. You are not created your webapp yet in azure , and you must modify the ServiceConnection and the name of your webapp on the `azure-pipelines.yml` file for the ones that you got.
-
-* Deploy the flask-sklearn app to Azure app Service ( using Plan B1)  with this command ( Create a webapp and deploy code from a local workspace to the app):
+* Create the webapp deploying the code from the local workspace to Azure app Service ( using Plan B1)  with this command:
 
 ```sh
 az webapp up -n <name of webapp> --location southcentralus --sku B1
 ```
 
->Note 1: If you don't choose the sku , the default will be `P1V2(Premium V2 Small)` ( brings more costs associated)
->Note 2 : the name of your app must be unique!!!
->Note 3: This operation can take a while to complete ...
+![alt text](< insert screen 4a here>)
 
-![alt text](<insert here>)
 
-* Update the `azure-pipelines.yml` with the name of your webapp and your service connection point ( Check YouTube video for a detailed explanation)
+>Note 1: Your service URL  will be something like this : `https://<name of webapp>.azurewebsites.net/`
+>Note 2: If you don't choose the sku , the default will be `P1V2(Premium V2 Small)` ( brings more costs associated)
+>Note 3 : the name of your app must be unique!!!
+>Note 4: This operation can take a while to complete ...
 
-> Modifications are at variables webAppName & environmentName
+* In  your new Project in Azure DevOps, go to Pipelines -->New Pipeline --> GitHub --> Select Your Repo --> select `an Existing YAML file`
 
-* Your service URL  will be something like this : `https://<name of webapp>.azurewebsites.net/`
+![alt text](< insert screen 5 here>)
 
-* Update the file `make_predict_azure_app.sh` with the webapp end point
 
-```sh
-grep https make_predict_azure_app.sh
-```
+> Choose the `main` branch and the file named `azure-pipelines.yml` as is showed on the figure below
+> Update the `azure-pipelines.yml` with the name of your webapp and your Service connection point ( Check YouTube video for a detailed explanation)
+> Modifications are at variables webAppName & environmentName too !!!
 
-* perform a cosmetic change to your app.py , so you can see your CI/CD pipeline in action on Azure DevOps/
+![alt text](< insert screen 5a here>)
+
+* Choose Run Pipeline and your Azure DevOps Pipeline is going to start to be deployed with all his stages ( in this case 2: Build & deploy)
+
+![alt text](< insert screen 6 here>)
+
+* Perform a cosmetic change to your app.py , so you can see your CI/CD pipelines in action on Azure DevOps ( CD) & GitHub Actions (CI)
 
 > On file `app.py` change this line:
 
@@ -173,7 +167,7 @@ html = "<h3">Sklearn Prediction Home</h3>"
 for this one:
 
 ```sh
-html = "<h2>Sklearn Prediction Home App RestAPI</h2>"
+html = "<h2>Sklearn Prediction Home APP - RestAPI</h2>"
 ```
 
 and then perform a quick lint and push the changes to your repo:
@@ -185,9 +179,25 @@ git commit -m "app.py updated"
 git push origin main
 ```
 
-* When the app is successfully deployed then update the app service endpoint in the code and then run script `./make_predict_azure_app` file to make a prediction.
+![alt text](< insert screen 7 here>)
 
-* You will be able to see the successfully prediction made:
+![alt text](< insert screen 7b here>)
+
+* Check that the webapp is running opening his URL, example:
+
+```sh
+https://jc-my-ml-app.azurewebsites.net/
+```
+
+![alt text](< insert screen 8 here>)
+
+* Update the file `make_predict_azure_app.sh` with the webapp service end point
+
+```sh
+grep https make_predict_azure_app.sh
+```
+
+* When the Azure DevOPs pipeline is successfully deployed, then its time to make a prediction on our webapp ( running in Azure App Service):
 
 ```sh
 ./make_predict_azure_app.sh
@@ -200,28 +210,16 @@ Port: 443
 {"prediction":[20.35373177134412]}
 ```
 
-![alt text](<link here>)
+![alt text](< insert screen 9 here>)
 
 * Logging: Check on webapp log tail `az webapp log tail` , the answer like this:
 
-```sh
-2021-02-07T05:01:07.528670565Z /antenv/lib/python3.7/site-packages/sklearn/ensemble/gradient_boosting.py:34: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
-2021-02-07T05:01:07.528708467Z Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-2021-02-07T05:01:07.528714768Z   from ._gradient_boosting import predict_stages
-2021-02-07T05:01:07.528719468Z /antenv/lib/python3.7/site-packages/sklearn/ensemble/gradient_boosting.py:34: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
-2021-02-07T05:01:07.528725368Z Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-2021-02-07T05:01:07.528729969Z   from ._gradient_boosting import predict_stages
-2021-02-07T05:01:07.528734269Z [2021-02-07 05:01:07,528] INFO in app: JSON payload: %s json_payload
-2021-02-07T05:01:07.595625682Z [2021-02-07 05:01:07,595] INFO in app: inference payload DataFrame: %s inference_payload
-2021-02-07T05:01:07.596822066Z [2021-02-07 05:01:07,595] INFO in app: Scaling Payload: %s payload
-2021-02-07T05:01:07.771026138Z 172.16.0.1 - - [07/Feb/2021:05:01:07 +0000] "POST /predict HTTP/1.1" 200 35 "-" "curl/7.64.0"
-```
+![alt text](< insert screen 10 here>)
 
-* Run locust command in your project to perform a load test on the API. You can see an output like this.
+* Execute a Load Testing , running Locust .
 
-> Azure cloud Shell is not enough good to perform locust there, so use a VM or your own local machine ( windows, macos, linux) to perform locust
-
-> copy both files (`loadtesting.sh` & `locustfile.py`) and run the `loadtesting.sh` file and open the browser on `http://localhost:8089/` :
+> Note: Azure cloud Shell is not enough good to perform locust there, so use a VM or your own local machine ( windows, macos, linux) to run Locust
+> Note: copy both files (`loadtesting.sh` & `locustfile.py`) and run the `loadtesting.sh` file and open the browser on `http://localhost:8089/` :
 
 ```sh
 ./loadtesting.sh
@@ -231,7 +229,7 @@ Port: 443
 > This is good to know how good is your webapp and your plan to manage the requests. So you can decide to scale up the plan service of your webapp for example.
 -> Locust could generate a stats report.
 
-![alt text](https://github.com/jfcb853/Udacity-DevOps-Azure-Project-2/blob/main/images/webapp-answering%20locust%20load%20testing.png)
+![alt text](<link here>)
 
 Remaining screenshots can be checked in the screenshot folder.
 
@@ -253,7 +251,7 @@ Remaining screenshots can be checked in the screenshot folder.
 
 ## YouTube Demo
 
-Link for YouTube Demo Video -> (<link here>)
+Link for YouTube Demo Video -> (https://youtu.be/jysGOhOFHTs)
 
 ## License
 
